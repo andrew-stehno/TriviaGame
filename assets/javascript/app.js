@@ -3,70 +3,65 @@ $(document).ready(function () {
     // Game Data:
     // ===============================================
 
-    let gameData = {
-        counter: 15,
-        userAnswer: "",
-        correct: 0,
-        incorrect: 0
-    };
-
-    let q1 = {
+    const q1 = {
         question: '"Wurst" and "Worst", are examples of what?',
-        choices: ['Homonyms', 'Synonyms', 'Heteronyms', 'Cinnamins'],
-        correct: q1.choices[0],
+        choice1: '<button type="button" class="btn btn-success correct">Homonyms</button>',
+        choice2: '<button type="button" class="btn btn-success">Synonyms</button>',
+        choice3: '<button type="button" class="btn btn-success">Heteronyms</button>',
+        choice4: '<button type="button" class="btn btn-success">Cinnamins</button>',
+        answer: 'Homonyms',
         giphy: undefined
     };
 
-    let q2 = {
+    const q2 = {
         question: 'German sausages are known as?',
-        choices: ['Lil Smokies', 'Hot Dogs', 'Bratwurst', 'J-Dawgs'],
-        correct: q2.choices[2],
+        choice1: '<button type="button" class="btn btn-success">Lil Smokies</button>',
+        choice2: '<button type="button" class="btn btn-success">Hot Dogs</button>',
+        choice3: '<button type="button" class="btn btn-success correct">Bratwurst</button>',
+        choice4: '<button type="button" class="btn btn-success">J-Dawgs</button>',
+        answer: 'Bratwurst',
         giphy: undefined
     }
+
+    let questions = [q1, q2];
+    let qIndex = 0;
+    let counter = 15;
+    let correct = 0;
+    let incorrect = 0;
+    let timer = $('<p>');
+    let gif = $('<div>');
 
     // Game Functions:
     // ===============================================
 
     $("#start").click(function () {
-        init();
-    });
-
-    function init() {
         hideButton();
-        display();
-        // countDown();
-    }
+        question();
+    });
 
     function hideButton() {
         document.getElementById("start").style.visibility = "hidden";
     };
 
-    function display(q1) {
-        $("#question").html(globalThis.question);
-        let userGuess = "";
-        for (let i = 0; i < 4; i++) {
-            let userChoice = $('<div>');
-            let choice1 = globalThis.choice1[i];
-            let choice2 = globalThis.choice1[i];
-            let choice3 = globalThis.choice1[i];
-            let choice4 = globalThis.choice1[i];
+    function question() {
+        if (qIndex === questions.length) {
+            gameOver()
+        } else {
+            counter = 15;
+            $('.question').append(questions[qIndex].question);
+            $('.choice-1').append(questions[qIndex].choice1);
+            $('.choice-2').append(questions[qIndex].choice2);
+            $('.choice-3').append(questions[qIndex].choice3);
+            $('.choice-4').append(questions[qIndex].choice4);
 
-        }console.log(choice1);
+            // $(".button").click(function () {
+            //     // if (){
 
-    }display(q1);
+            //     // }
 
-    // function displayAll() {
-    //     $("#question").html(q1.question);
-    //     function mulChoic() {
-    //         let radioBtn = $('<input type="radio" name="q1"/>');
-    //         $('#choices').append(q1.answer);
-    //         $('#choices').append(q1.wrong1);
-    //         $('#choices').append(q1.wrong2);
-    //         $('#choices').append(q1.wrong3);
-    //         radioBtn.prependTo('#choices');
-    //     }
-    //     mulChoic();
-    // };
+            // }
+    }
+    };
 
     // let timer = setInterval(){}
     // function countDown() {
