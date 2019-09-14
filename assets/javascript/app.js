@@ -5,7 +5,7 @@ $(document).ready(function () {
 
     const q1 = {
         question: '"Wurst" and "Worst", are examples of what?',
-        choice1: '<button type="button" class="btn btn-success correct">Homonyms</button>',
+        choice1: '<p class="click">Homonyms</p>',
         choice2: '<button type="button" class="btn btn-success">Synonyms</button>',
         choice3: '<button type="button" class="btn btn-success">Heteronyms</button>',
         choice4: '<button type="button" class="btn btn-success">Cinnamins</button>',
@@ -28,7 +28,8 @@ $(document).ready(function () {
     let counter = 15;
     let correct = 0;
     let incorrect = 0;
-    let timer = $('<p>');
+    let intervalId;
+    let talley = $('<div>');
     let gif = $('<div>');
 
     // Game Functions:
@@ -47,57 +48,39 @@ $(document).ready(function () {
         if (qIndex === questions.length) {
             gameOver()
         } else {
-            counter = 15;
             $('.question').append(questions[qIndex].question);
             $('.choice-1').append(questions[qIndex].choice1);
             $('.choice-2').append(questions[qIndex].choice2);
             $('.choice-3').append(questions[qIndex].choice3);
             $('.choice-4').append(questions[qIndex].choice4);
+            countDown();
+            
+            $('button').click(function () {
+                let userGuess = $('button').val();
+                console.log(userGuess);
+            })
 
-            // $(".button").click(function () {
-            //     // if (){
-
-            //     // }
-
-            // }
-    }
+        }
     };
 
-    // let timer = setInterval(){}
-    // function countDown() {
-    //     let timer = setInterval(function () {
-    //         counter--
-    //         if (q1.homonyms === true) {
-    //             rightAnswer();
-    //         }
-    //         else if (counter === 0) {
-    //             console.log("oops");
-    //             clearInterval(timer);
-    //             wrongAnswer();
-    //         }
-    //     }, 1000);
-    // }
+    function countDown() {
+        clearInterval(intervalId);
+        intervalId = setInterval(decrement, 1000);
+    };
 
-
-    //     function rightAnswer() {
-
-    //     };
-
-    //     function wrongAnswer() {
-
-    //     };
-
-    //     function clockReset() {
-
-    //     };
+    function decrement() {
+        counter--
+        $('.timer').html(counter);
+        if (counter === 0) {
+            incorrect++;
+            clearInterval(intervalId);
+        }
+    };
 
     // function displayButton() {
     //     document.getElementById("start").style.display;
     // };
 
-    //     function gameResults() {
-
-    //     };
 
     //     function gameReset() {
 
