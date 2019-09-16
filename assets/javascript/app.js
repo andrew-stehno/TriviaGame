@@ -143,11 +143,16 @@ $(document).ready(function () {
     let message = $('<div>');
     let gif = $('<div>');
 
+    talley.addClass('data');
+    message.addClass('data');
+    gif.addClass('data');
+    
     // Game Functions:
     // ===============================================
     // Game Start:
 
     $("#start").click(function () {
+        clearInterval(intervalId);
         document.getElementById("start").style.visibility = "hidden";
         question();
     });
@@ -250,15 +255,21 @@ $(document).ready(function () {
         $('.main-body').append(talley);
 
         setTimeout(function () {
-            swal("Game Over!", "You have to start again!");   
-        }, 5000);
+            swal("Game Over!", "You have to start again!"); 
+        }, 3000);
+        document.onclick = function() {
+            resetGame();
+          }; 
     }; 
-    
-    function resetGame() {
-        qIndex = 0
-        talley.empty();
-        // document.getElementById("start")
-    }
-    resetGame();
 
+    function resetGame() {
+        clearInterval(intervalId);
+        qIndex = 0;
+        correct = 0;
+        incorrect = 0;
+        userGuess = null;
+        talley.empty();
+        document.getElementById("start").style.visibility ="visible";
+    }
+   
 });

@@ -2,3 +2,40 @@ body {
     background-image: url("../images/sausage-4463366_640.png")
 }
 
+.head {
+    color: green;
+    font-size: 56px;
+}
+.head i {
+    color: yellow;
+    padding: 10px;
+}
+
+.question {
+    color: rgb(55, 51, 255);
+    font-weight: 600;
+    font-size: 46px;
+}
+
+.question, .choice-1,
+.choice-2, .choice-3,
+.choice-4, .timer, .data {
+    text-align: center
+}
+
+.data {
+    color: black;
+    font-size: 46px;
+    font-weight: 600;
+}
+
+.timer {
+    font-size: 76px;
+    color: purple;
+    font-weight: 600;
+}
+
+.choice-1, .choice-2,
+.choice-3, .choice-4 {
+    padding-bottom: 5px;
+}
