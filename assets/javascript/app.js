@@ -10,7 +10,7 @@ $(document).ready(function () {
         choice3: '<button type="button" class="btn btn-success">Heteronyms</button>',
         choice4: '<button type="button" class="btn btn-success">Cinnamins</button>',
         statement1: 'Nice shot Commander!',
-        statement2: "Huk'd on fonix wurkd 4me, itcan wurk 4 u 2!",
+        statement2: "Phonix is not your stront suite!",
         answer: 'Homonyms',
         giphy1: '<iframe src="https://giphy.com/embed/J6Nj4TzJWtyWk" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/star-trek-lasers-sausage-J6Nj4TzJWtyWk">via GIPHY</a></p>',
         giphy2: '<iframe src="https://giphy.com/embed/3o7rbRW09ZmTRPeUtW" width="480" height="400" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/justin-g-dance-sausage-party-3o7rbRW09ZmTRPeUtW">via GIPHY</a></p>',
@@ -25,12 +25,12 @@ $(document).ready(function () {
         answer: 'Bratwurst',
         statement1: 'Prost!',
         statement2: 'Nine Nine Nine Nine Nine!',
-        giphy1: '<iframe src="https://giphy.com/embed/xT5LMxXP4S6DmInKOA" width="480" height="366" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/season-8-the-simpsons-8x13-xT5LMxXP4S6DmInKOA">via GIPHY</a></p>',
+        giphy1: '<iframe src="https://giphy.com/embed/mOOuUUIEEgq6A" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/shakeshack-beer-cheers-steins-mOOuUUIEEgq6A">via GIPHY</a></p>',
         giphy2: '<iframe src="https://giphy.com/embed/3oEhn4ZRr2rC2rlKmI" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/art-lol-food-3oEhn4ZRr2rC2rlKmI">via GIPHY</a></p>',
     };
 
     const q3 = {
-        question: 'What food are Star Fleet computers not capable of replicating?',
+        question: 'What foods are Star Fleet computers not capable of replicating?',
         choice1: '<button type="button" class="btn btn-success">Alcohal</button>',
         choice2: '<button type="button" class="btn btn-success">Hot Dogs</button>',
         choice3: '<button type="button" class="btn btn-success">Pretzels</button>',
@@ -163,8 +163,10 @@ $(document).ready(function () {
     function question() {
         if (qIndex === questions.length) {
             console.log('game over');
+            clearInterval(intervalId);
             gameOver()
         } else {
+            // Append data to DOM:====================
             talley.empty();
             message.empty();
             gif.empty();
@@ -174,11 +176,11 @@ $(document).ready(function () {
             $('.choice-3').empty().append(questions[qIndex].choice3);
             $('.choice-4').empty().append(questions[qIndex].choice4);
             countDown();
-
+            // Click logs user guess:==================
             $('button').click(function () {
                 let userGuess = $(this).text();
                 console.log("user guess " + userGuess);
-
+                // Correct/Incorrect conditionals:=====
                 if (userGuess === questions[qIndex].answer) {
                     correct++;
                     console.log("correct: " + correct);
@@ -200,7 +202,7 @@ $(document).ready(function () {
                 }
                 qIndex++;
                 console.log('array index: ' + qIndex);
-
+                // Timeout after giphy display:======
                 setTimeout(function () {
                     message.empty();
                     gif.empty();
@@ -240,7 +242,7 @@ $(document).ready(function () {
         $('.choice-2').empty();
         $('.choice-3').empty();
         $('.choice-4').empty();
-        $('.timer').empty();
+        // $('.timer').empty();
     }
 
     function nextQuestion() {
