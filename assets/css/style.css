@@ -1,5 +1,6 @@
 body {
-    background-image: url("../images/sausage-4463366_640.png")
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(../images/sausage-4463366_640.png);
+    background-size: cover;
 }
 
 .head {

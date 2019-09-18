@@ -16,48 +16,61 @@ $(document).ready(function () {
         giphy2: '<iframe src="https://giphy.com/embed/3o7rbRW09ZmTRPeUtW" width="480" height="400" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/justin-g-dance-sausage-party-3o7rbRW09ZmTRPeUtW">via GIPHY</a></p>',
     };
 
-    // const q2 = {
-    //     question: 'German sausages are known as?',
-    //     choice1: '<button type="button" class="btn btn-success">Lil Smokies</button>',
-    //     choice2: '<button type="button" class="btn btn-success">Hot Dogs</button>',
-    //     choice3: '<button type="button" class="btn btn-success">Bratwurst</button>',
-    //     choice4: '<button type="button" class="btn btn-success">J-Dawgs</button>',
-    //     answer: 'Bratwurst',
-    //     statement1: 'Prost!',
-    //     statement2: 'Nine Nine Nine Nine Nine!',
-    //     giphy1: '<iframe src="https://giphy.com/embed/mOOuUUIEEgq6A" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/shakeshack-beer-cheers-steins-mOOuUUIEEgq6A">via GIPHY</a></p>',
-    //     giphy2: '<iframe src="https://giphy.com/embed/3oEhn4ZRr2rC2rlKmI" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/art-lol-food-3oEhn4ZRr2rC2rlKmI">via GIPHY</a></p>',
+    const q2 = {
+        question: 'German sausages are known as?',
+        choice1: '<button type="button" class="btn btn-success">Lil Smokies</button>',
+        choice2: '<button type="button" class="btn btn-success">Hot Dogs</button>',
+        choice3: '<button type="button" class="btn btn-success">Bratwurst</button>',
+        choice4: '<button type="button" class="btn btn-success">J-Dawgs</button>',
+        answer: 'Bratwurst',
+        statement1: 'Prost!',
+        statement2: 'Nine Nine Nine Nine Nine!',
+        giphy1: '<iframe src="https://giphy.com/embed/mOOuUUIEEgq6A" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/shakeshack-beer-cheers-steins-mOOuUUIEEgq6A">via GIPHY</a></p>',
+        giphy2: '<iframe src="https://giphy.com/embed/3oEhn4ZRr2rC2rlKmI" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/art-lol-food-3oEhn4ZRr2rC2rlKmI">via GIPHY</a></p>',
+    };
+
+    const q3 = {
+        question: 'What foods are Star Fleet computers not capable of replicating?',
+        choice1: '<button type="button" class="btn btn-success">Alcohal</button>',
+        choice2: '<button type="button" class="btn btn-success">Hot Dogs</button>',
+        choice3: '<button type="button" class="btn btn-success">Pretzels</button>',
+        choice4: '<button type="button" class="btn btn-success">Nuts</button>',
+        answer: 'Hot Dogs',
+        statement1: 'Mystery meat is far too complex for even the super computers of tomorrow!',
+        statement2: 'Please, bar foods are staples of deep space exploration!',
+        giphy1: '<iframe src="https://giphy.com/embed/vp122eOzO0Hxm" width="480" height="333" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/star-trek-wow-vp122eOzO0Hxm">via GIPHY</a></p>',
+        giphy2: '<iframe src="https://giphy.com/embed/mFOHqYNbjdsZy" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/kirk-mFOHqYNbjdsZy">via GIPHY</a></p>',
+    };
+
+    const q4 = {
+        question: 'Hot Dogs contain which of the following items?',
+        choice1: '<button type="button" class="btn btn-success">Desert Tortoise</button>',
+        choice2: '<button type="button" class="btn btn-success">Beef</button>',
+        choice3: '<button type="button" class="btn btn-success">Racoon</button>',
+        choice4: '<button type="button" class="btn btn-success">Children</button>',
+        answer: 'Beef',
+        statement1: 'That may be true, somewhere in the multi-verse...',
+        statement2: 'It pays to be good kids!',
+        giphy1: '<iframe src="https://giphy.com/embed/3oEjI5sC6vbNXJhaWA" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/wink-dennys-sausage-3oEjI5sC6vbNXJhaWA">via GIPHY</a></p>',
+        giphy2: '<iframe src="https://giphy.com/embed/3o7TKO3AC2o5cOkZfG" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/cute-kawaii-hotdog-3o7TKO3AC2o5cOkZfG">via GIPHY</a></p>',
+    };
+
+    // const q5 = {
+    //     question: "Name Captain Picard's most daunting nemesis:",
+    //     choice1: '<button type="button" class="btn btn-success">Dathon</button>',
+    //     choice2: '<button type="button" class="btn btn-success">Bjorn Borg</button>',
+    //     choice3: '<button type="button" class="btn btn-success">Q</button>',
+    //     choice4: '<button type="button" class="btn btn-success">Indegestion</button>',
+    //     answer: 'Indigestion',
+    //     statement1: 'Take some Immodium and walk it off!',
+    //     statement2: "The Wurst Trivia Ever really doesen't make any sense!",
+    //     giphy1: '<iframe src="https://giphy.com/embed/SztNh2RqJmXVC" width="480" height="228" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/trek-sausage-SztNh2RqJmXVC">via GIPHY</a></p>',
+    //     giphy2: '<iframe src="https://giphy.com/embed/7fLvK10wH1Mpa" width="480" height="359" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/reaction-7fLvK10wH1Mpa">via GIPHY</a></p>',
     // };
 
-    // const q3 = {
-    //     question: 'What foods are Star Fleet computers not capable of replicating?',
-    //     choice1: '<button type="button" class="btn btn-success">Alcohal</button>',
-    //     choice2: '<button type="button" class="btn btn-success">Hot Dogs</button>',
-    //     choice3: '<button type="button" class="btn btn-success">Pretzels</button>',
-    //     choice4: '<button type="button" class="btn btn-success">Nuts</button>',
-    //     answer: 'Hot Dogs',
-    //     statement1: 'Mystery meat is far too complex for even the super computers of tomorrow!',
-    //     statement2: 'Please, bar foods are staples of deep space exploration!',
-    //     giphy1: '<iframe src="https://giphy.com/embed/vp122eOzO0Hxm" width="480" height="333" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/star-trek-wow-vp122eOzO0Hxm">via GIPHY</a></p>',
-    //     giphy2: '<iframe src="https://giphy.com/embed/mFOHqYNbjdsZy" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/kirk-mFOHqYNbjdsZy">via GIPHY</a></p>',
-    // };
-
-    // const q4 = {
-    //     question: 'Hot Dogs contain which of the following items?',
-    //     choice1: '<button type="button" class="btn btn-success">Desert Tortoise</button>',
-    //     choice2: '<button type="button" class="btn btn-success">Beef</button>',
-    //     choice3: '<button type="button" class="btn btn-success">Racoon</button>',
-    //     choice4: '<button type="button" class="btn btn-success">Children</button>',
-    //     answer: 'Beef',
-    //     statement1: 'That may be true, somewhere in the multi-verse...',
-    //     statement2: 'It pays to be good kids!',
-    //     giphy1: '<iframe src="https://giphy.com/embed/2v06skq0mKgCs" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/foxadhd-fox-adhd-2v06skq0mKgCs">via GIPHY</a></p>',
-    //     giphy2: '<iframe src="https://giphy.com/embed/3o7TKO3AC2o5cOkZfG" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/cute-kawaii-hotdog-3o7TKO3AC2o5cOkZfG">via GIPHY</a></p>',
-    // };
-
-    let questions = [q1];
+    let questions = [q1, q2, q3, q4];
     let qIndex = 0;
-    let counter = 11;
+    let counter = 10;
     let correct = 0;
     let incorrect = 0;
     let talley = $('<div>');
@@ -81,43 +94,24 @@ $(document).ready(function () {
         $('.choice-3').empty().append(questions[qIndex].choice3);
         $('.choice-4').empty().append(questions[qIndex].choice4);
     };
-
+    var myTimer;
     // Timer function:=================================
-
     function countDown() {
-        clearInterval(myTimer);
-        setInterval(myTimer, 1000);
-        function myTimer() {
-            counter--;
-            $('.timer').html(counter);
+        myTimer = setInterval(timer, 1000);
+    };
+
+    function timer() {
+        $('.timer').html(counter);
             if (counter === 0) {
                 clearInterval(myTimer);
                 incorrect++;
                 qIndex++;
                 console.log("timed out incorrect: " + incorrect);
-                // swal("Whoa!", "You ran out of time!");
-                // question();
+                swal("Whoa!", "You ran out of time!");
+                question();
             }
-        }
+        counter--;
     };
-
-    // function countDown() {
-    //     intervalId = setInterval(decrement, 1000);
-    //     clearInterval(intervalId);
-    // };
-
-    // function decrement() {
-    //     counter--
-    //     $('.timer').html(counter);
-    //     if (counter === 0) {
-    //         incorrect++;
-    //         qIndex++;
-    //         clearInterval(intervalId);
-    //         console.log("timed out incorrect: " + incorrec);
-    //         swal("Whoa!", "You ran out of time!");
-    //         nextQuestion();
-    //     }
-    // };
 
     // Message display if correct answer function:=====
 
@@ -125,7 +119,7 @@ $(document).ready(function () {
         message.append(questions[qIndex].statement1);
         gif.append(questions[qIndex].giphy1);
         $('.main-body').append(message);
-        // $('.main-body').append(gif);
+        $('.main-body').append(gif);
     };
 
     // Message display if wrong answer function:=======
@@ -134,7 +128,7 @@ $(document).ready(function () {
         message.append(questions[qIndex].statement2);
         gif.append(questions[qIndex].giphy2);
         $('.main-body').append(message);
-        // $('.main-body').append(gif);
+        $('.main-body').append(gif);
     };
 
     // Anti display function:==========================
@@ -145,7 +139,7 @@ $(document).ready(function () {
         $('.choice-2').empty();
         $('.choice-3').empty();
         $('.choice-4').empty();
-        // $('.timer').empty();
+        $('.timer').empty();
     }
 
     // Gameover display function:======================
@@ -155,14 +149,12 @@ $(document).ready(function () {
         talley.append("You got " + correct + " correct, and " + incorrect + " wrong!");
         console.log(talley);
         $('.main-body').append(talley);
-
+        //$('.swal-button').click(resetGame);
         setTimeout(function () {
-            swal("Game Over!", "You have to start again!");
+            swal("Game Over!", "You have to start again!").then(_ => {
+                resetGame();
+            });
         }, 3000);
-
-        document.onclick = function () {
-            resetGame();
-        };
     };
 
     // Reset game without refresh function:==============
@@ -172,6 +164,7 @@ $(document).ready(function () {
         correct = 0;
         incorrect = 0;
         userGuess = null;
+        counter = 10;
         talley.empty();
         document.getElementById("start").style.visibility = "visible";
     }
@@ -191,18 +184,18 @@ $(document).ready(function () {
         if (qIndex === questions.length) {
             console.log('game over');
             gameOver()
-        } 
-        
+        }
+
         else {
             display();
             countDown();
             // Click logs user guess==================
-            $('button').click(function () {
+            $('.btn.btn-success').click(function () {
+                clearInterval(myTimer);
                 let userGuess = $(this).text();
                 console.log("user guess " + userGuess);
 
                 if (userGuess === questions[qIndex].answer) {
-                    clearInterval(myTimer);
                     correct++;
                     console.log("Correct guess: " + correct);
                     hideMe();
@@ -220,11 +213,11 @@ $(document).ready(function () {
                 console.log('array index: ' + qIndex);
 
                 // Timeout after giphy display:=========
-                // setTimeout(function () {
-                //     message.empty();
-                //     gif.empty();
-                //     question();
-                // }, 5000);
+                setTimeout(function () {
+                    message.empty();
+                    gif.empty();
+                    question();
+                }, 5000);
             })
         }
     }
