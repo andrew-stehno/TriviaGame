@@ -5,12 +5,12 @@ $(document).ready(function () {
 
     const q1 = {
         question: '"Wurst" and "Worst", are examples of what?',
-        choice1: '<button type="button" class="btn btn-success">Homonyms</button>',
-        choice2: '<button type="button" class="btn btn-success">Synonyms</button>',
-        choice3: '<button type="button" class="btn btn-success">Heteronyms</button>',
-        choice4: '<button type="button" class="btn btn-success">Cinnamins</button>',
+        choice1: '<button type="button" class="btn btn-warning border border-dark">Homonyms</button>',
+        choice2: '<button type="button" class="btn btn-warning border border-dark">Synonyms</button>',
+        choice3: '<button type="button" class="btn btn-warning border border-dark">Heteronyms</button>',
+        choice4: '<button type="button" class="btn btn-warning border border-dark">Cinnamins</button>',
         statement1: 'Nice shot Commander!',
-        statement2: "Phonics is not your stront suite!",
+        statement2: "Phonics is not your strong suit!",
         answer: 'Homonyms',
         giphy1: '<iframe src="https://giphy.com/embed/J6Nj4TzJWtyWk" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/star-trek-lasers-sausage-J6Nj4TzJWtyWk">via GIPHY</a></p>',
         giphy2: '<iframe src="https://giphy.com/embed/3o7rbRW09ZmTRPeUtW" width="480" height="400" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/justin-g-dance-sausage-party-3o7rbRW09ZmTRPeUtW">via GIPHY</a></p>',
@@ -18,10 +18,10 @@ $(document).ready(function () {
 
     const q2 = {
         question: 'German sausages are known as?',
-        choice1: '<button type="button" class="btn btn-success">Lil Smokies</button>',
-        choice2: '<button type="button" class="btn btn-success">Hot Dogs</button>',
-        choice3: '<button type="button" class="btn btn-success">Bratwurst</button>',
-        choice4: '<button type="button" class="btn btn-success">J-Dawgs</button>',
+        choice1: '<button type="button" class="btn btn-warning border border-dark">Lil Smokies</button>',
+        choice2: '<button type="button" class="btn btn-warning border border-dark">Hot Dogs</button>',
+        choice3: '<button type="button" class="btn btn-warning border border-dark">Bratwurst</button>',
+        choice4: '<button type="button" class="btn btn-warning border border-dark">J-Dawgs</button>',
         answer: 'Bratwurst',
         statement1: 'Prost!',
         statement2: 'Nine Nine Nine Nine Nine!',
@@ -31,10 +31,10 @@ $(document).ready(function () {
 
     const q3 = {
         question: 'What foods are Star Fleet computers not capable of replicating?',
-        choice1: '<button type="button" class="btn btn-success">Alcohal</button>',
-        choice2: '<button type="button" class="btn btn-success">Hot Dogs</button>',
-        choice3: '<button type="button" class="btn btn-success">Pretzels</button>',
-        choice4: '<button type="button" class="btn btn-success">Nuts</button>',
+        choice1: '<button type="button" class="btn btn-warning border border-dark">Alcohol</button>',
+        choice2: '<button type="button" class="btn btn-warning border border-dark">Hot Dogs</button>',
+        choice3: '<button type="button" class="btn btn-warning border border-dark">Pretzels</button>',
+        choice4: '<button type="button" class="btn btn-warning border border-dark">Nuts</button>',
         answer: 'Hot Dogs',
         statement1: 'Mystery meat is far too complex for even the super computers of tomorrow!',
         statement2: 'Please, bar foods are staples of deep space exploration!',
@@ -44,10 +44,10 @@ $(document).ready(function () {
 
     const q4 = {
         question: 'Hot Dogs contain which of the following items?',
-        choice1: '<button type="button" class="btn btn-success">Desert Tortoise</button>',
-        choice2: '<button type="button" class="btn btn-success">Beef</button>',
-        choice3: '<button type="button" class="btn btn-success">Racoon</button>',
-        choice4: '<button type="button" class="btn btn-success">Children</button>',
+        choice1: '<button type="button" class="btn btn-warning border border-dark">Criminals</button>',
+        choice2: '<button type="button" class="btn btn-warning border border-dark">Beef</button>',
+        choice3: '<button type="button" class="btn btn-warning border border-dark">Babies</button>',
+        choice4: '<button type="button" class="btn btn-warning border border-dark">Children</button>',
         answer: 'Beef',
         statement1: 'That may be true, somewhere in the multi-verse...',
         statement2: 'It pays to be good kids!',
@@ -66,7 +66,7 @@ $(document).ready(function () {
     //     statement2: "The Wurst Trivia Ever really doesen't make any sense!",
     //     giphy1: '<iframe src="https://giphy.com/embed/SztNh2RqJmXVC" width="480" height="228" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/trek-sausage-SztNh2RqJmXVC">via GIPHY</a></p>',
     //     giphy2: '<iframe src="https://giphy.com/embed/7fLvK10wH1Mpa" width="480" height="359" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/reaction-7fLvK10wH1Mpa">via GIPHY</a></p>',
-    // };
+    // };     neither giphy will load, creates error!
 
     let questions = [q1, q2, q3, q4];
     let qIndex = 0;
@@ -193,12 +193,14 @@ $(document).ready(function () {
             display();
             countDown();
             // Click logs user guess==================
-            $('.btn.btn-success').click(function () {
+            $('.btn.btn-warning').click(function () {
                 clearInterval(myTimer);
                 let userGuess = $(this).text();
                 console.log("user guess " + userGuess);
 
                 if (userGuess === questions[qIndex].answer) {
+                    clearInterval(myTimer);
+                    counter = 10;
                     correct++;
                     console.log("Correct guess: " + correct);
                     hideMe();
@@ -206,6 +208,8 @@ $(document).ready(function () {
                 }
 
                 else {
+                    clearInterval(myTimer);
+                    counter = 10;
                     incorrect++;
                     console.log("Incorrect guess " + incorrect);
                     hideMe();
