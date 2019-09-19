@@ -104,11 +104,14 @@ $(document).ready(function () {
         $('.timer').html(counter);
             if (counter === 0) {
                 clearInterval(myTimer);
+                counter = 11;
                 incorrect++;
                 qIndex++;
                 console.log("timed out incorrect: " + incorrect);
-                swal("Whoa!", "You ran out of time!");
-                question();
+                setTimeout(function () {
+                    question();
+                }, 3000);
+            
             }
         counter--;
     };
